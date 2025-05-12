@@ -24,3 +24,11 @@ class ProductPage(BasePage):
     def should_be_equal_price_product_and_basket(self):
         strong_price = self.browser.find_element(*ProductPageLocators.STRONG_PRICE_PRODUCT)
         assert strong_price.text == ProductPage.take_price_of_product(self), "Цена товара не совпадает с ценой в корзине."
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+        "Success message is presented, but should not be"
+
+    def should_be_disappeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+        "Succes message not disappeared, but should be"
