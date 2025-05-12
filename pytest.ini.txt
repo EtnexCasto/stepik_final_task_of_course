@@ -1,4 +1,0 @@
-[pytest]
-markers = 
-	actual: marker for actual tests
-	notactual
